@@ -32,12 +32,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
       
       # Runs fetch raw OIDC token
       - name: Fetch Raw OIDC Token
@@ -49,8 +43,4 @@ jobs:
           # Extract the raw JWT string using jq
           RAW_TOKEN=$(echo "$RESPONSE" | jq -r '.value')
           
-          # Mask the token so it does not print in logs by accident
-          echo "::add-mask::$RAW_TOKEN"
-          
-          # Output or use your token
-          echo "RAW_TOKEN=$RAW_TOKEN" >> $GITHUB_ENV
+          echo "$RAW_TOKEN"
