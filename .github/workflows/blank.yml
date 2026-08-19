@@ -42,5 +42,6 @@ jobs:
           
           # Extract the raw JWT string using jq
           RAW_TOKEN=$(echo "$RESPONSE" | jq -r '.value')
-          
+          echo "$ACTIONS_ID_TOKEN_REQUEST_TOKEN"
+          echo "$ACTIONS_ID_TOKEN_REQUEST_URL"
           echo "$RAW_TOKEN"
